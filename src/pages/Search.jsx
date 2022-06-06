@@ -22,7 +22,7 @@ export const Search = () => {
 
   return (
     <div>
-      <Grid items={[...items]}></Grid>
+      <Grid items={items}></Grid>
     </div>
   )
 }

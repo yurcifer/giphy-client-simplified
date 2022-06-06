@@ -17,10 +17,9 @@ export const Grid = ({items}) => {
     columnClassName={styles.grid_column}
     breakpointCols={breakpointColumnsObj}>
     {items.map( ({id, url, images, title}) => 
-      <div>
+      <div key={id}>
         <Card 
           id={id}
-          key={id}
           url={url}
           previewUrl={images.preview_gif.url}
           title={title}
