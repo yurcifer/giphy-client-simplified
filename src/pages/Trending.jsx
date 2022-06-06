@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getTrending } from '../api/trending';
+import { Grid } from '../components/Grid/Grid';
 
 export const Trending = () => {
   const [items, setItems] = useState([]);
@@ -15,9 +16,7 @@ export const Trending = () => {
 
   return (
     <div>
-      {items 
-      ? items.map( ({title, id}) => <h1>{title}</h1>)
-      : <h1>Loading</h1>}
+      {<Grid items={items}></Grid>}
     </div>
   )
 }
