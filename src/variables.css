@@ -1,4 +1,10 @@
 :root {
-  --body-background-color: rgb(19, 19, 19);
-  --main-font-color: rgb(240, 240, 240);
+  --regular-font-size: 15px;
+  --primary-color: rgb(19, 19, 19);
+  --accent-color: #FFE600;
+  --accent-color-darken: #dbc609;
+  --header-height: 80px;
+  --primary-text-color: #FFF;
+  --reversed-text-color: #000;
+  --footer-height: 60px
 }

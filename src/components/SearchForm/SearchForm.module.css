@@ -1,0 +1,35 @@
+:root {
+  --border-radius:5px;
+}
+.form {
+  display: flex;
+  max-width: 300px;
+}
+
+.controlGroup {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.nativeInput {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 5px;
+  font-size: var(--regular-font-size);
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  border: 1px solid var(--primary-text-color);
+}
+
+.button {
+  background-color: var(--accent-color);
+  color: var(--reversed-text-color);
+  border: 1px solid var(--accent-color);
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  cursor: pointer;
+}
+.button:hover {
+  background-color: var(--accent-color-darken);
+}

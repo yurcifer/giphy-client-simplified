@@ -6,7 +6,7 @@ export const Trending = () => {
   const [items, setItems] = useState([]);
 
   const fetchTrending = async () => { 
-    const {data} = await getTrending(50);
+    const {data} = await getTrending(25);
     setItems(data);
   };
 
@@ -16,7 +16,7 @@ export const Trending = () => {
 
   return (
     <div>
-      {<Grid items={items}></Grid>}
+      <Grid items={items}></Grid>
     </div>
   )
 }
