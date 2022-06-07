@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './SearchForm.module.css'
 
-export const SearchForm = ({ onSubmit }) => {
+export const SearchForm = ({ onSubmit, resetValue }) => {
   const [value, setValue] = useState('');
-
   const submitHandler = (element) => {
     element.preventDefault();
     if (value) {
       onSubmit(value);
     }
   }
+
+useEffect( () => {
+  setValue('');
+  console.log('value' + value);
+}, [resetValue] )
 
   const onChangeHandler = (element) => {
     setValue(element.currentTarget.value)

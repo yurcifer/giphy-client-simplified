@@ -1,16 +1,19 @@
+:root {
+  --margin-padding: 15px;
+}
 .grid {
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
-  margin-left: -30px; /* gutter size offset */
+  margin-left: calc(var(--margin-padding) * -1); /* gutter size offset */
   width: auto;
 }
 .grid_column {
-  padding-left: 30px; /* gutter size */
+  padding-left: var(--margin-padding); /* gutter size */
   background-clip: padding-box;
 }
 
 .grid_column > div { 
   background: grey;
-  margin-bottom: 30px;
+  margin-bottom: var(--margin-padding);
 }
