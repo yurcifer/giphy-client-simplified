@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
+import { BackToTopButton } from './components/BackToTop/BackToTopButton';
 import { SearchForm } from './components/SearchForm/SearchForm';
 import { Search } from './pages/Search';
 import { Trending } from './pages/Trending';
@@ -29,6 +30,7 @@ function App() {
         <Route exact={true} path="/search" element={<Search offset={offset} /> }/>
       </Routes>
       <button style={{margin: "15px"}} onClick={ () => setOffset(offset + 25)}>Load more</button>
+      <BackToTopButton />
     </div>
   );
 }

@@ -12,7 +12,6 @@ export const SearchForm = ({ onSubmit, resetValue }) => {
 
 useEffect( () => {
   setValue('');
-  console.log('value' + value);
 }, [resetValue] )
 
   const onChangeHandler = (element) => {
