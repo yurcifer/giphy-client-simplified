@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styles from './backToTopButton.module.css'
+import styles from './BackToTopButton.module.css'
 
 export const BackToTopButton = () => {
   const [backToTopButton, setBackToTopButton] = useState();

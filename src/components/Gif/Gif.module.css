@@ -1,0 +1,34 @@
+.root {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+.image_container {
+  width: 70%;
+  max-width: 500px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+}
+
+.description {
+  font-size: 1.25em;
+  width: 30%;
+  margin: 30px;
+  text-align: center;
+}
+
+.giphy_link {
+  color: white;
+}
+
+.giphy_link:hover {
+  color: var(--accent-color);
+}
+
+.giphy_link:active{
+  color: white;
+}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
-import { BackToTopButton } from './components/BackToTop/BackToTopButton';
+import { Gif } from './components/Gif/Gif';
 import { SearchForm } from './components/SearchForm/SearchForm';
 import { Search } from './pages/Search';
 import { Trending } from './pages/Trending';
@@ -22,15 +22,15 @@ function App() {
   return (
     <div className="App">
       <header className='header'>
-        <Link to="/" style={{margin: "10px",}} onClick={ resetState }>Home</Link>
+        <Link to="/" className="link" onClick={ resetState }>Home</Link>
         <SearchForm onSubmit={ search } resetValue={resetValue} />
       </header>
       <Routes>
-        <Route exact={true} path="/" element={<Trending offset={offset} />} />
-        <Route exact={true} path="/search" element={<Search offset={offset} /> }/>
+        <Route exact={true} path="/" element={<Trending offset={offset} setOffset={setOffset} />} />
+        <Route exact={true} path="/search" element={<Search offset={offset} setOffset={setOffset} /> }/>
+        <Route exact={true} path="/gif/:id" element={<Gif /> }/>
       </Routes>
-      <button style={{margin: "15px"}} onClick={ () => setOffset(offset + 25)}>Load more</button>
-      <BackToTopButton />
+      
     </div>
   );
 }

@@ -1,11 +1,13 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { getSearched } from '../api/search'
+import { BackToTopButton } from '../components/BackToTop/BackToTopButton';
 import { Grid } from '../components/Grid/Grid';
 
 
-export const Search = ({offset = 0, limit = 25}) => {
+export const Search = ({offset = 0, limit = 25, setOffset}) => {
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
   const {search} = useLocation();
 
   const params = useMemo( () => new URLSearchParams(search), [search]);
@@ -13,6 +15,7 @@ export const Search = ({offset = 0, limit = 25}) => {
 
   const fetchSearched = async (query) => {
     const {data} = await getSearched(query, limit, offset);
+    setIsLoading(false)
     return data;
   }
 
@@ -26,7 +29,12 @@ export const Search = ({offset = 0, limit = 25}) => {
 
   return (
     <div>
-      <Grid items={items}></Grid>
+      {isLoading 
+        ? <div>Loading...</div>
+        : <Grid items={items}></Grid>
+      }
+      <button style={{margin: "15px"}} onClick={ () => setOffset(offset + 25)}>Load more</button>
+      <BackToTopButton />
     </div>
   )
 }
