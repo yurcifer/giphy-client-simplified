@@ -4,7 +4,6 @@ import { getGifById } from '../../api/getGifById'
 import styles from './Gif.module.css'
 
 export const Gif = () => {
-  // const [gifSrc, setGifSrc] = useState('');
   const [copyLabel, setCopyLabel] = useState('Copy link');
   const [data, setData] = useState({});
   const gifId = useParams().id;

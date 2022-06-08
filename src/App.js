@@ -23,8 +23,8 @@ function App() {
   return (
     <div className="App">
       <header className='header'>
-        <div to={`${process.env.PUBLIC_URL}/`} className="link" id="back" onClick={ () => navigate(-1) }>Back</div>
-        <Link to={`process.env.PUBLIC_URL/`} className="link" onClick={ resetState }>Home</Link>
+        <div className="link" id="back" onClick={ () => navigate(-1) }>Back</div>
+        <Link to={`${process.env.PUBLIC_URL}/`} className="link" onClick={ resetState }>Home</Link>
         <SearchForm onSubmit={ search } resetValue={resetValue} />
       </header>
       <Routes>
