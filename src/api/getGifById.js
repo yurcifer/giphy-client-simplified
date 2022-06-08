@@ -1,6 +1,6 @@
 import axios from "axios";
-
-const API_KEY = "epUC1SLUtOPsDjfYBtSkIC2tr2M0SVTJ";
+const { REACT_APP_API_KEY } = process.env;
+const API_KEY = REACT_APP_API_KEY;
 
 export async function getGifById (gifId = '') {
   const url = `https://api.giphy.com/v1/gifs/${gifId}?api_key=${API_KEY}`;
