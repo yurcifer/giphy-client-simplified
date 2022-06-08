@@ -15,14 +15,18 @@ img {
 }
 
 .description {
-  font-size: 1.25em;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2em;
   width: 30%;
   margin: 30px;
   text-align: center;
 }
 
 .giphy_link {
+  text-decoration: none;
   color: white;
+  font-size: larger;
 }
 
 .giphy_link:hover {
@@ -31,4 +35,19 @@ img {
 
 .giphy_link:active{
   color: white;
+}
+
+.btnWrapper {
+  margin: 15px;
+}
+
+.btn {
+  font-size: 0.9em;
+  background-color: white;
+
+}
+
+
+.btn:hover {
+  cursor: pointer;
 }
