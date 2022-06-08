@@ -13,23 +13,24 @@ function App() {
 
   const search = (query) => {
     setOffset(0);
-    navigate(`/search?q=${query}`);
+    navigate(`${process.env.PUBLIC_URL}/search?q=${query}`);
   }
   const resetState = () => {
     setOffset(0);
     setResetValue(!resetValue);
   }
+  //the PUBLIC_URL is needed for correct navigation after hosting on the github page
   return (
     <div className="App">
       <header className='header'>
-        <div to="/" className="link" id="back" onClick={ () => navigate(-1) }>Back</div>
-        <Link to="/" className="link" onClick={ resetState }>Home</Link>
+        <div to={`${process.env.PUBLIC_URL}/`} className="link" id="back" onClick={ () => navigate(-1) }>Back</div>
+        <Link to={`process.env.PUBLIC_URL/`} className="link" onClick={ resetState }>Home</Link>
         <SearchForm onSubmit={ search } resetValue={resetValue} />
       </header>
       <Routes>
-        <Route exact={true} path="/" element={<Trending offset={offset} setOffset={setOffset} />} />
-        <Route exact={true} path="/search" element={<Search offset={offset} setOffset={setOffset} /> }/>
-        <Route exact={true} path="/gif/:id" element={<Gif /> }/>
+        <Route exact={true} path={`${process.env.PUBLIC_URL}/`} element={<Trending offset={offset} setOffset={setOffset} />} />
+        <Route exact={true} path={`${process.env.PUBLIC_URL}/search`} element={<Search offset={offset} setOffset={setOffset} /> }/>
+        <Route exact={true} path={`${process.env.PUBLIC_URL}/gif/:id`} element={<Gif /> }/>
       </Routes>
       
     </div>
