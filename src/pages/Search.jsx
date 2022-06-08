@@ -13,6 +13,10 @@ export const Search = ({offset = 0, limit = 25, setOffset}) => {
   const params = useMemo( () => new URLSearchParams(search), [search]);
   const searchQuery = params.get('q')
 
+  const expandItems = function (data) {
+    setItems([...items, ...data]);
+  }
+  
   const fetchSearched = async (query) => {
     const {data} = await getSearched(query, limit, offset);
     setIsLoading(false)
@@ -20,12 +24,12 @@ export const Search = ({offset = 0, limit = 25, setOffset}) => {
   }
 
   useEffect( () => {
-    fetchSearched(searchQuery).then( (data) => setItems([...items, ...data]))
-  }, [offset]);
+    fetchSearched(searchQuery).then( (data) => expandItems(data))
+  }, [offset, limit, searchQuery]);
 
   useEffect( () => {
     fetchSearched(searchQuery).then( (data) => setItems([...data]))
-  }, [searchQuery])
+  }, [searchQuery]);
 
   return (
     <div>
