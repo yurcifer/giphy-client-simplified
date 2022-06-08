@@ -20,7 +20,9 @@ export const BackToTopButton = () => {
   return (
     <div >
     {backToTopButton && (
-      <div className={styles.backToTop} onClick={scrollUp}>^</div>
+      <div className={styles.backToTop} onClick={scrollUp}>
+          <div className={styles.arrow}></div>
+      </div>
     )}
     </div>
   )

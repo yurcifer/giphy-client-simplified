@@ -20,3 +20,12 @@
   text-decoration: none;
   color: var(--accent-color);
 }
+
+#back {
+  width: min-content;
+  left: 30px;
+}
+
+#back:hover {
+  cursor: pointer;
+}

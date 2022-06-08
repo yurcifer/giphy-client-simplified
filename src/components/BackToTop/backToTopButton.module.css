@@ -2,7 +2,6 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  z-index: 3;
   background-color: var(--accent-color);
   width: 50px;
   height: 50px;
@@ -15,4 +14,23 @@
 
 .backToTop:hover {
   background-color: var(--accent-color-darken);
+}
+
+
+.arrow{
+	border-top: 0;
+	border-bottom: 10px solid rgb(116, 116, 116);
+	content: "";
+}
+
+.arrow {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	vertical-align: middle;
+  transform: translate(0, -50%);
+	border-bottom: 10px solid rgb(116, 116, 116);
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	content: "";
 }

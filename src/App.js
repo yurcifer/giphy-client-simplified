@@ -22,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <header className='header'>
+        <div to="/" className="link" id="back" onClick={ () => navigate(-1) }>Back</div>
         <Link to="/" className="link" onClick={ resetState }>Home</Link>
         <SearchForm onSubmit={ search } resetValue={resetValue} />
       </header>
