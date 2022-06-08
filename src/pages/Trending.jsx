@@ -8,15 +8,15 @@ export const Trending = ({limit = 25, offset = 0, setOffset}) => {
   const [isLoading, setIsLoading] = useState(true)
 
 
-  useEffect( () => {
-    const fetchTrending = async () => { 
-      const {data} = await getTrending(limit, offset);
-      setIsLoading(false)
-      return data;
-    };
+  const fetchTrending = async () => { 
+    const {data} = await getTrending(limit, offset);
+    setIsLoading(false)
+    return data;
+  };
   
+  useEffect( () => {
     fetchTrending().then( (data) => setItems([...items, ...data]));
-  }, [offset, items, limit]);
+  }, [offset, limit]);
 
   return (
     <div>
